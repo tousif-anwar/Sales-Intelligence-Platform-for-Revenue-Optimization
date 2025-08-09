@@ -92,3 +92,24 @@ The churn prediction model can be customized in `churn_model.py`. By default, it
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## SaaS Product Usage & Revenue Analytics
+
+The script `src/saas_bi_pipeline.py` simulates a SaaS business by generating mock customer, usage, and revenue data. It builds a star schema with fact tables for usage and revenue and dimensions for customers, plans, and time.
+
+### Usage
+
+1. Run the pipeline:
+   ```bash
+   python src/saas_bi_pipeline.py
+   ```
+   This creates CSV files under `data/processed/` that can be loaded into BI tools.
+2. Connect the processed data to **Looker Studio** or **Power BI** and create persona-based dashboards:
+   - **CEO**: Growth metrics and churn rate
+   - **CPO**: Feature usage and adoption trends
+   - **CFO**: MRR/ARR and revenue forecasts
+
+### KPIs
+The pipeline calculates key metrics including churn rate, DAU/MAU, expansion revenue, LTV:CAC ratio, and feature adoption trends. Results are saved to `data/processed/kpis.json` for quick reference.
+
+See `INSIGHTS.md` for example strategic takeaways derived from the metrics.
